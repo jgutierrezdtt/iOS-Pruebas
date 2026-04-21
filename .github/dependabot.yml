@@ -1,0 +1,15 @@
+version: 2
+updates:
+  # Keep GitHub Actions pinned and up to date
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+
+  # CocoaPods — updates Podfile.lock when new pod versions are released
+  - package-ecosystem: cocoapods
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5

@@ -1,0 +1,10 @@
+# Exclude vendored CocoaPods — not our code, scanner noise with no actionable findings
+Pods/
+
+# Xcode project metadata
+*.xcodeproj/
+*.xcworkspace/
+
+# Build artefacts
+build/
+DerivedData/

@@ -1,0 +1,20 @@
+name: SBOM — Software Bill of Materials
+
+on:
+  push:
+    branches: [master]
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  sbom:
+    uses: jgutierrezdtt/Pipelines/.github/workflows/reusable-sbom.yml@main
+    with:
+      sbom_tool: syft
+      sbom_subject: fs          # scans the filesystem — reads Podfile.lock automatically
+      sbom_format: cyclonedx-json
+      upload_artifacts: true
+      upload_release_asset: true  # attaches the SBOM JSON to GitHub releases
+      attest_sbom: false          # enable once you need signed provenance
+    secrets: inherit
